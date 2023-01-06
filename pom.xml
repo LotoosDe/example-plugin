@@ -15,8 +15,8 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <lombok.version>1.18.22</lombok.version>
-
+        <lombok.version>1.18.24</lombok.version>
+        <server-api.version>1.12.2-R0.1-SNAPSHOT</server-api.version>
         <api.version>1.0.0</api.version>
         <kernel.version>1.0.0</kernel.version>
         <lib.version>1.0.0</lib.version>
@@ -24,12 +24,7 @@
 
     <build>
         <plugins>
-            <!-- Run tests with JUnit-Jupiter -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
+            
         </plugins>
         <!-- Process plugin.yml in build -->
         <resources>
@@ -42,20 +37,16 @@
 
     <repositories>
         <repository>
-            <id>flammenfuchs</id>
-            <url>https://repository.flammenfuchs.de/</url>
-        </repository>
-        <repository>
-            <id>flammenfuchs-privat</id>
-            <url>https://repository.flammenfuchs.de/private</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <!-- network related -->
         <dependency>
-            <groupId>de.flammenfuchs</groupId>
-            <artifactId>network-api</artifactId>
+            <groupId>de.lotoos</groupId>
+            <artifactId>lotoos-api</artifactId>
             <version>${api.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -63,7 +54,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <version>${server-api.version}</version>
         </dependency>
         <!-- testing and lombok -->
         <dependency>
@@ -71,24 +62,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.22.2</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

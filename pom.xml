@@ -53,7 +53,7 @@
         <!-- environment related -->
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
+            <artifactId>spigot-api</artifactId>
             <version>${server-api.version}</version>
         </dependency>
         <!-- testing and lombok -->
